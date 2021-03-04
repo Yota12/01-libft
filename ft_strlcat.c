@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 18:09:19 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/12 18:09:19 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 16:30:50 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
@@ -26,7 +26,7 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
 		dest[i + j] = src[j];
 		j++;
 	}
-    if (i < size)
-        dst[i + j] = 0;
+	if (i < size)
+		dst[i + j] = 0;
 	return (i + ft_strlen(src));
 }

@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 15:36:44 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/12 15:36:44 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 16:25:51 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
-char    *strcpy(char *dest, const char *src)
+char	*strcpy(char *dest, const char *src)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (src[i] != '\0')
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    return (dest);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
 }

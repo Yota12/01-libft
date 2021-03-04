@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 15:24:39 by marvin            #+#    #+#             */
-/*   Updated: 2021/03/02 15:24:39 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 16:30:17 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strcat(char *dest, char *src)

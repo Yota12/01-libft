@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 12:27:41 by marvin            #+#    #+#             */
-/*   Updated: 2021/03/03 12:27:41 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 16:18:45 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (s[i] != '\0')
-    {
-        write(fd, &s[i], 1);
-        i++;
-    }
-    write(fd, '\n', 1);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, '\n', 1);
 }

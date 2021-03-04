@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 16:15:46 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/10 16:15:46 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 16:17:56 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-
-void    *memcpy(void *dest, const void *src, size_t n)
+void	*memcpy(void *dest, const void *src, size_t n)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (i++ <= n)
-        ((unsigned char *) dest)[i] = ((unsigned char *)src)[i];
-    return (dest);
+	i = -1;
+	while (i++ <= n)
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+	return (dest);
 }

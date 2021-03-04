@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 17:29:52 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/23 17:29:52 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 16:32:12 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-   int  i;
-   char *fresh;
+	int		i;
+	char	*fresh;
 
-    i = 0;
-    if (!s)
-        return (NULL);
-    if (!(fresh = (malloc (sizeof(char) * ft_strlen(s) + 1))))
-        return (NULL);
-    while (str[i])
+	i = 0;
+	if (!s)
+		return (NULL);
+	if (!(fresh = (malloc(sizeof(char) * ft_strlen(s) + 1))))
+		return (NULL);
+	while (str[i])
 	{
 		fresh[i] = f(i, str[i]);
 		i++;

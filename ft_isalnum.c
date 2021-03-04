@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 12:55:30 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/16 12:55:30 by marvin           ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/04 15:23:27 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int     ft_isalnum(int c)
 {
-    if ((c >= 'A' && c <= 'Z')||(c >= 'a' && c <= 'z')||(c >= '0' && c <= '9'))
-        return (1);
-    return (0);
+	if ((c >= 'A' && c <= 'Z')||(c >= 'a' && c <= 'z')||(c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }

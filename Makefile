@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/04 10:13:48 by marvin            #+#    #+#              #
-#    Updated: 2021/03/04 10:13:48 by marvin           ###   ########.fr        #
+#    Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#              #
+#    Updated: 2021/03/04 15:23:27 by jmuselie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,16 +63,16 @@ RM = rm -f
 OBJS = ${SRCS:.c=.o}
 
 ${NAME}: ${OBJS}
-		ar -rc ${NAME} ${OBJS}
+	ar -rc ${NAME} ${OBJS}
 
 
 all : ${NAME}
 
 clean :		
-		${RM} ${OBJS} ${OBJSBONUS}
+	${RM} ${OBJS} ${OBJSBONUS}
 
 fclean : clean
-		${RM} ${NAME}
+	${RM} ${NAME}
 
 re : fclean all
 
