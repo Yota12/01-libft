@@ -6,10 +6,11 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:21:08 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 17:10:03 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <strings.h>
 
 char	*strcat(char *dest, const char *src)

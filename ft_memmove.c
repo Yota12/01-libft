@@ -6,10 +6,11 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:15:37 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 17:10:51 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <strings.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

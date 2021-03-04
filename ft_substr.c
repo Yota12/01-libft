@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:42:26 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 17:03:52 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <strings.h>
 #include <stdlib.h>
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	int		i;
 
 	i = 0;
-	if (!(substr = (malloc(sizeof(char) * ft_strlen(s) + 1))))
+	if (!(substr = (malloc(sizeof(char) * len + 1))))
 		return (NULL);
 	while (s[start])
 	{
