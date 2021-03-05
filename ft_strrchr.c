@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:07:05 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 15:06:44 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*ft_strrchr(const char *str, int c)
 		i++;
 	}
 	if (last_occur != 0)
-		return (str[last_occur]);
+		return (&((char *)str)[last_occur]);
 	return (NULL);
 }

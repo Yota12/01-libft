@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: wetieven <wetieven@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:56:44 by jmuselie         ###   ########lyon.fr   */
+/*   Created: 2020/12/03 17:07:16 by wetieven          #+#    #+#             */
+/*   Updated: 2020/12/03 18:29:11 by wetieven         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*memcpy(void *dest, const void *src, size_t n)
+int	ft_islower(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i <= n)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dest);
+	return ('a' <= c && c <= 'z');
 }

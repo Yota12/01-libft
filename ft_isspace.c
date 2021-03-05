@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: wetieven <wetieven@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:56:44 by jmuselie         ###   ########lyon.fr   */
+/*   Created: 2020/12/03 18:21:15 by wetieven          #+#    #+#             */
+/*   Updated: 2020/12/05 11:58:49 by wetieven         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*memcpy(void *dest, const void *src, size_t n)
+int	ft_isspace(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i <= n)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dest);
+	return ((c >= 9 && c <= 13) || c == ' ');
 }

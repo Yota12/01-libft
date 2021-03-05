@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:24:31 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 15:06:08 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *str, int c)
 	while (str[i])
 	{
 		if (str[i] == (unsigned char)c)
-			return (str[i]);
+			return (&((char *)str)[i]);
 		i++;
 	}
 	return (NULL);
