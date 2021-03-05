@@ -5,81 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 17:10:12 by jmuselie         ###   ########lyon.fr   */
+/*   Created: 2021/03/05 15:54:17 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/05 17:06:11 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
 
-int		ft_strlen(char *str)
+static char	**ft_failsafe(char **words, int count)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	while(count--)
+		free(words[count]);
+	free(words);
+	return (NULL);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+size_t	ft_word_count(const char *str, const char sep)
 {
-	unsigned int i;
-
-	i = 0;
-	while (i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
-
-int		ft_is_sep(char c, char *charset)
-{
-	int i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-char	**ft_split(char *str, char *charset)
-{
+	size_t	res;
 	char	*start;
+
+	res = 0;
+	while (*str)
+	{
+		while (*str == sep && *str)
+			str++;
+		start = (char *)str;
+		while (*str != sep && *str)
+			str++;
+		if	(str != start)
+			res++;
+	}
+	return (res);
+}
+
+char	**ft_split(char const *str, char sep)
+{
 	char	**words;
+	char	*start;
 	int		i;
 
-	words = malloc(sizeof(char*) * ((ft_strlen(str) / 2) + 2));
-	if (words == 0)
+	if (!str || 
+			!(words = malloc(sizeof(char *) * ft_word_count(str, sep) + 1)))
 		return (NULL);
 	i = 0;
 	while (*str)
 	{
-		while (*str && ft_is_sep(*str, charset) == 1)
+		while (*str == sep && *str)
 			str++;
-		start = str;
-		while (*str && ft_is_sep(*str, charset) == 0)
+		start = (char *)str;
+		while (*str != sep && *str)
 			str++;
-		words[i] = malloc(sizeof(char) * ((str - start) + 1));
-		if (words[i] == 0)
-			return (NULL);
-		ft_strncpy(words[i], start, (str - start));
-		words[i][str - start] = 0;
-		if (start != str)
-			i++;
+		if (str != start)
+		{
+		if (!(words[i] = malloc(sizeof(char) * (str - start + 1))))
+			return(ft_failsafe(words, i));
+		ft_strlcpy(words[i++], start, str - start + 1);
+		}
 	}
 	words[i] = 0;
 	return (words);

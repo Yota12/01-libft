@@ -6,7 +6,7 @@
 #    By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#              #
-#    Updated: 2021/03/05 11:44:52 by jmuselie         ###   ########lyon.fr    #
+#    Updated: 2021/03/05 15:16:38 by jmuselie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,9 @@ SRCS =		ft_memchr.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_digit_count.c \
 			ft_itoa.c \
 			ft_putnbr_fd.c \
 			ft_strjoin.c \
-			ft_word_count.c \
 			ft_split.c \
 
 CC = gcc
