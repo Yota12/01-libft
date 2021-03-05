@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:20:33 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 11:34:00 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-	while (s[i] != "\0")
+	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
 		i++;

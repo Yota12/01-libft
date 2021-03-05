@@ -6,7 +6,7 @@
 #    By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#              #
-#    Updated: 2021/03/04 15:23:27 by jmuselie         ###   ########lyon.fr    #
+#    Updated: 2021/03/05 11:44:52 by jmuselie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,12 +63,14 @@ RM = rm -f
 OBJS = ${SRCS:.c=.o}
 
 ${NAME}: ${OBJS}
-	ar -rc ${NAME} ${OBJS}
-
+	ar rcs ${NAME} ${OBJS}
 
 all : ${NAME}
 
-clean :		
+bonus: ${NAME} ${OBJBONUS}
+	ar rcs ${NAME} ${OBJBONUS}
+
+clean:	
 	${RM} ${OBJS} ${OBJSBONUS}
 
 fclean : clean
@@ -76,3 +78,4 @@ fclean : clean
 
 re : fclean all
 
+.PHONY: all clean fclean re

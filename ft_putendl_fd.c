@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:18:45 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 11:33:39 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_putendl_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
-	write(fd, '\n', 1);
+	write(fd, "\n", 1);
 }

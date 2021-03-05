@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:30:17 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 14:03:57 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strcat(char *dest, char *src)
 		dest[i] = '\0';
 	return (dest);
 }
-
+/*
 char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
@@ -57,7 +57,7 @@ int		ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
+*/
 int		ft_strlen_doubleptr(char **str, int size)
 {
 	int i;

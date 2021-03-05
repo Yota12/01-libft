@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 15:23:27 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 11:13:56 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ char			*ft_itoa(int n)
 
 	negative = 0;
 	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+		return ("-2147483648");
 	if (n < 0)
 		negative = 1;
 	count = ft_countdigit(n);
-	if (!(str = ft_strnew(count + negative)))
+	if (!(str = malloc(count + negative)))
 		return (NULL);
 	if (negative)
 	{

@@ -6,9 +6,12 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:32:12 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 11:57:36 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+#include <strings.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -20,9 +23,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	if (!(fresh = (malloc(sizeof(char) * ft_strlen(s) + 1))))
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		fresh[i] = f(i, str[i]);
+		fresh[i] = f(i, s[i]);
 		i++;
 	}
 	fresh[i] = '\0';
