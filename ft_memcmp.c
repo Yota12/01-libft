@@ -6,12 +6,11 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:05:41 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 17:30:55 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 16:00:11 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -24,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str2 = s2;
 	if (n == 0)
 		return (0);
-	while (i < n - 1 && str1[i] == str2[i] && str1[i] != '\0')
+	while (i < n - 1 && str1[i] == str2[i])
 		i++;
 	return (str2[i] - str1[i]);
 }

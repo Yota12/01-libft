@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 13:46:42 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 15:37:08 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	void *ret;
 
 	ret = s;
-	while (--n >= 0)
+	while (n--)
 		((unsigned char *)ret)[n] = (unsigned char)c;
 	return (s);
 }

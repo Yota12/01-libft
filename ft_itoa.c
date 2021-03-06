@@ -6,56 +6,55 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 11:13:56 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 17:28:57 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_countdigit(int n)
+void	ft_recursive_digitizer(char *res, long lnb, int index)
 {
-	int i;
+	if (lnb >= 10)
+		ft_recursive_digitizer(res, lnb / 10, index - 1);
+	res[index] = lnb % 10 + 48;
+}
 
-	i = 1;
-	if (n == -2147483648)
+size_t	ft_digit_count(long lnb)
+{
+	size_t	i;
+
+	i = 0;
+	if (lnb < 0)
 	{
+		lnb = -lnb;
 		i++;
-		n = -147483648;
 	}
-	if (n < 0)
-		n = -n;
-	while (n >= 10)
+	while (lnb >= 10)
 	{
+		lnb /= 10;
 		i++;
-		n = (n / 10);
 	}
+	i++;
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int nb)
 {
-	int		count;
-	char	*str;
-	char	negative;
+	long	lnb;
+	char	*res;
+	int		digit_count;
 
-	negative = 0;
-	if (n == -2147483648)
-		return ("-2147483648");
-	if (n < 0)
-		negative = 1;
-	count = ft_countdigit(n);
-	if (!(str = malloc(count + negative)))
+	lnb = nb;
+	digit_count = ft_digit_count(lnb);
+	res = malloc(sizeof(char) * (digit_count + 1));
+	if (!res)
 		return (NULL);
-	if (negative)
+	if (lnb < 0)
 	{
-		n = -n;
-		str[0] = '-';
+		res[0] = '-';
+		lnb = -lnb;
 	}
-	while (count > 0)
-	{
-		str[count + negative - 1] = (n % 10) + '0';
-		count--;
-		n = n / 10;
-	}
-	return (str);
+	res[digit_count] = '\0';
+	ft_recursive_digitizer(res, lnb, digit_count - 1);
+	return (res);
 }

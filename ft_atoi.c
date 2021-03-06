@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 17:14:10 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 17:50:08 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,23 @@
 
 int	ft_atoi(const char *str)
 {
-	int	atoi;
-	int	negative;
+	unsigned long	atoi;
+	int				negative;
 
 	negative = 1;
 	atoi = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\r' ||
-			*str == '\v' || *str == '\f' || *str == ' ')
+	while (ft_isspace(*str))
 		str++;
-	while (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
-		if (*str == '-')
+		if (*str++ == '-')
 			negative = negative * -1;
-		str++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		atoi = atoi * 10 + *str - 48;
-		str++;
-	}
+	while (ft_isdigit(*str))
+		atoi = atoi * 10 + (*str++ - 48);
+	/*if (atoi > 9223372036854775807 && negative == -1)
+		return (0);
+	else if (atoi > 9223372036854775807 && negative == 1)
+		return (-1);*/
 	return (atoi * negative);
 }

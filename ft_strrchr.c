@@ -6,27 +6,24 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 15:06:44 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 16:56:38 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int				i;
-	unsigned int	last_occur;
+	char	*last_occur;
 
-	i = 0;
-	last_occur = 0;
-	while (str[i])
+	last_occur = NULL;
+	while (*str)
 	{
-		if (str[i] == (unsigned char)c)
-			last_occur = i;
-		i++;
+		if (*str == (unsigned char)c)
+			last_occur = (char *)str;
+		str++;
 	}
-	if (last_occur != 0)
-		return (&((char *)str)[last_occur]);
-	return (NULL);
+	if (c == 0)
+		last_occur = (char *)str;
+	return (last_occur);
 }

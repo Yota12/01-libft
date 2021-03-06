@@ -6,38 +6,30 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 16:37:35 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 17:09:05 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *str, char const *charset)
 {
-	char	*str_trim;
-	int		index;
-	int		i;
-	int		j;
+	char	*start;
+	char	*ret;
 
-	i = -1;
-	j = 0;
-	index = 0;
-	if (!(str_trim = (malloc(sizeof(char) * ft_strlen(s1) + 1))))
+	if (!str)
 		return (NULL);
-	while (s1[j])
-	{
-		while (set[index] != '\0')
-		{
-			if (s1[j] == set[index])
-				j++;
-			else
-				index++;
-		}
-		index = 0;
-		str_trim[i] = s1[j];
-		i++;
-	}
-	str_trim[i] = '\0';
-	return (str_trim);
+	while (*str && ft_strchr(charset, *((char *)str)))
+		str++;
+	start = (char *)str;
+	while (*str)
+		str++;
+	while (ft_strchr(charset, *((char *)str)) && str >= start)
+		str--;
+	str++;
+	ret = malloc(sizeof(char) * (str - start + 1));
+	if (!ret)
+		return (NULL);
+	ft_strlcpy(ret, start, str - start + 1);
+	return (ret);
 }

@@ -6,28 +6,37 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/04 17:03:52 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 17:12:08 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
-#include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *src, unsigned int start, size_t dst_len)
 {
-	char	*substr;
-	int		i;
+	char	*ret;
+	size_t	src_len;
 
-	i = 0;
-	if (!(substr = (malloc(sizeof(char) * len + 1))))
+	if (!src)
 		return (NULL);
-	while (s[start])
+	src_len = ft_strlen(src);
+	if (start >= src_len)
 	{
-		substr[i] = s[start];
-		start++;
-		i++;
+		if (!(ret = malloc(sizeof(char))))
+			return (NULL);
+		*ret = 0;
 	}
-	substr[i] = '\0';
-	return (substr);
+	else if ((src_len - start) >= dst_len)
+	{
+		if (!(ret = malloc(sizeof(char) * dst_len + 1)))
+			return (NULL);
+		ft_strlcpy(ret, (src + start), dst_len + 1);
+	}
+	else
+	{
+		if (!(ret = malloc(sizeof(char) * (src_len - start + 1))))
+			return (NULL);
+		ft_strcpy(ret, (src + start));
+	}
+	return (ret);
 }
