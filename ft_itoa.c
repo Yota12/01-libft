@@ -6,20 +6,20 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/06 17:28:57 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/07 15:02:26 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_recursive_digitizer(char *res, long lnb, int index)
+static void			ft_recursive_digitizer(char *res, long lnb, int index)
 {
 	if (lnb >= 10)
 		ft_recursive_digitizer(res, lnb / 10, index - 1);
 	res[index] = lnb % 10 + 48;
 }
 
-size_t	ft_digit_count(long lnb)
+static	size_t		ft_digit_count(long lnb)
 {
 	size_t	i;
 
@@ -38,7 +38,7 @@ size_t	ft_digit_count(long lnb)
 	return (i);
 }
 
-char	*ft_itoa(int nb)
+char				*ft_itoa(int nb)
 {
 	long	lnb;
 	char	*res;
