@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/07 14:10:38 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/07 14:55:35 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*fct)(void *));
 t_list				*ft_lstmap(
 					t_list *lst, void *(*fct)(void *), void (*del)(void *));
-
 
 #endif
