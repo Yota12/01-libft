@@ -6,5 +6,6 @@ ref
 cpy
 libftTester
 libft-war-machine
+*.vim
 *.o
 *.a
