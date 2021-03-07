@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:14:22 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/07 14:10:38 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,16 @@ void				ft_putendl_fd(char *str, int fd);
 void				ft_putnbr_fd(int nb, int fd);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int nb);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst_start, t_list *new_elem);
+void				ft_lstadd_back(t_list **lst_start, t_list *new_elem);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*fct)(void *));
+t_list				*ft_lstmap(
+					t_list *lst, void *(*fct)(void *), void (*del)(void *));
+
 
 #endif

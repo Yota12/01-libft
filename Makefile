@@ -6,7 +6,7 @@
 #    By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 15:20:18 by jmuselie          #+#    #+#              #
-#    Updated: 2021/03/05 15:16:38 by jmuselie         ###   ########lyon.fr    #
+#    Updated: 2021/03/07 14:08:59 by jmuselie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,16 @@ SRCS =		ft_memchr.c \
 			ft_strjoin.c \
 			ft_split.c \
 
+SRCSBONUS = ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
+
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
@@ -60,13 +70,15 @@ RM = rm -f
 
 OBJS = ${SRCS:.c=.o}
 
+OBJSBONUS = ${SRCSBONUS:.c=.o}
+
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 all : ${NAME}
 
-bonus: ${NAME} ${OBJBONUS}
-	ar rcs ${NAME} ${OBJBONUS}
+bonus: ${NAME} ${OBJSBONUS}
+	ar rcs ${NAME} ${OBJSBONUS}
 
 clean:	
 	${RM} ${OBJS} ${OBJSBONUS}

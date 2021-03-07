@@ -1,0 +1,10 @@
+.DS_Store
+a.out*
+*.swp
+test*
+ref
+cpy
+libftTester
+libft-war-machine
+*.o
+*.a

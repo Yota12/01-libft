@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 15:20:19 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/07 13:44:44 by jmuselie         ###   ########lyon.fr   */
+/*   Created: 2021/03/07 14:39:52 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/07 14:39:54 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd_front(t_list **lst_start, t_list *new_elem)
 {
-	unsigned int i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && (((unsigned char *)s1)[i] == ((unsigned char *)s2)[i]
-				&& ((unsigned char *)s1)[i] != '\0'))
-		i++;
-	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+	new_elem->next = *lst_start;
+	*lst_start = new_elem;
 }

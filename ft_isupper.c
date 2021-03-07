@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wetieven <wetieven@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 17:35:21 by wetieven          #+#    #+#             */
-/*   Updated: 2020/12/03 18:29:23 by wetieven         ###   ########lyon.fr   */
+/*   Created: 2021/03/07 13:29:22 by jmuselie          #+#    #+#             */
+/*   Updated: 2021/03/07 13:29:51 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isupper(int c)
 {

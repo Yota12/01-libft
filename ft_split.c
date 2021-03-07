@@ -6,7 +6,7 @@
 /*   By: jmuselie <jmuselie@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 15:54:17 by jmuselie          #+#    #+#             */
-/*   Updated: 2021/03/06 17:55:11 by jmuselie         ###   ########lyon.fr   */
+/*   Updated: 2021/03/07 13:56:12 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static char		**ft_failsafe(char **words, int count)
 	return (NULL);
 }
 
-size_t			ft_word_count(const char *str, const char sep)
+static size_t	ft_word_count(const char *str, const char sep)
 {
-	size_t	res;
-	char	*start;
+	size_t		res;
+	char		*start;
 
 	res = 0;
 	while (*str)
@@ -39,14 +39,14 @@ size_t			ft_word_count(const char *str, const char sep)
 	return (res);
 }
 
-char		**ft_split(char const *str, char sep)
+char			**ft_split(char const *str, char sep)
 {
-	char	**words;
-	char	*start;
-	int		i;
+	char		**words;
+	char		*start;
+	int			i;
 
 	if (!str ||
-			!(words = malloc(sizeof(char *) * ft_word_count(str, sep) + 1)))
+		!(words = malloc(sizeof(char *) * (ft_word_count(str, sep) + 1))))
 		return (NULL);
 	i = 0;
 	while (*str)
@@ -60,7 +60,7 @@ char		**ft_split(char const *str, char sep)
 		{
 			if (!(words[i] = malloc(sizeof(char) * (str - start + 1))))
 				return (ft_failsafe(words, i));
-			ft_strlcpy(words[i++], start, (str - start + 1));
+			ft_strlcpy(words[i++], start, str - start + 1);
 		}
 	}
 	words[i] = 0;

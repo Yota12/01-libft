@@ -6,9 +6,11 @@
 /*   By: wetieven <wetieven@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:07:16 by wetieven          #+#    #+#             */
-/*   Updated: 2020/12/03 18:29:11 by wetieven         ###   ########lyon.fr   */
+/*   Updated: 2021/03/07 13:28:06 by jmuselie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_islower(int c)
 {
