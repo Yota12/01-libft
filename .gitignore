@@ -4,8 +4,9 @@ a.out*
 test*
 ref
 cpy
-libftTester
-libft-war-machine
+libftTester/
+libft-war-machine/
 *.vim
 *.o
-*.a
+*.
+old_makefile
