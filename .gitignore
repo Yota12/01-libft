@@ -10,3 +10,4 @@ libft-war-machine/
 *.o
 *.
 old_makefile
+makefile_will
